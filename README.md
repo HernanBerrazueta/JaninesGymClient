@@ -1,24 +1,37 @@
-# client
+# Janine's Gym Core
 
-## Project setup
+## Link para ver el video en loom
 ```
-npm install
+link
 ```
 
-### Compiles and hot-reloads for development
+## Frontend y Backend
+
+```Frontend: VueJS y Bootstrap```
+```Backend: NodeJS, MongoDB y Express```
+
+
+### Instrucciones para crear el usuario administrador
+
+```
+Se debe crear a travez de POSTMAN con la ruta de:
+http://localhost:3000/cliente-registro
+{
+    "username" : "admin",
+    "password" : "admin",
+    "firstname" : "admin",
+    "clientType" : true
+}
+```
+
+### En el cliente ejecutar lo siguiente
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### En el server ejecutar lo siguiente
 
-### Lints and fixes files
 ```
-npm run lint
+node index.js
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
