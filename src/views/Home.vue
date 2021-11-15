@@ -67,6 +67,11 @@ import LeftMenu from '@/components/LeftMenu.vue'
         name: 'Home',
         components: {
             LeftMenu
+        },
+        created(){
+            if(localStorage.clientType == undefined){
+                this.$router.push("/login")
+            }
         }
     }
 </script>
@@ -100,5 +105,5 @@ import LeftMenu from '@/components/LeftMenu.vue'
         border-bottom: 1px solid #aaa;
         font-weight: bold;
     }
-    
+
 </style>

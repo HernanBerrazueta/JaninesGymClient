@@ -5,16 +5,16 @@
                 <img src="@/assets/logo.png" alt="">
             </h3>
         </header>
-        <ul>
-            <li v-if="menuType == true" @click="this.$router.push('/clientes')">Clientes</li>
-            <div v-else>                
-                <li @click="this.$router.push('/')">Inicio</li>
-                <li @click="this.$router.push('/perfil')">Perfil</li>
-                <li>Entrenamiento</li>
-                <li>Plan Alimenticio</li>
-                <li>Configuración </li>
-            </div>
-            <li @click="this.$router.push('/login')">Salir</li>
+        <ul v-if="menu == 'true'">
+            <li @click="this.$router.push('/clientes')">Clientes</li>
+            <li @click="logOut()">Salir</li>
+        </ul>
+        <ul v-else>
+            <li @click="this.$router.push('/home')">Inicio</li>
+            <li @click="this.$router.push('/perfil')">Perfil</li>
+            <li>Plan Alimenticio</li>
+            <li>Configuración </li>
+            <li @click="logOut()">Salir</li>
         </ul>
     </nav>
 </template>
@@ -23,11 +23,23 @@
     export default {
         data(){
             return{
-                menuType: Boolean
+                menu: false
+            }
+        },
+        watch: {
+            menu: function (val){
+                this.menu = val
+            }
+        },
+        methods:{
+            logOut(){
+                localStorage.clear();
+                this.$router.push('/login')
             }
         },
         created(){
-            this.menuType = localStorage.clientType
+            this.menu = localStorage.clientType
+
         }
     }
 </script>

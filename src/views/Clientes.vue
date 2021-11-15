@@ -97,7 +97,7 @@
                                 v-model="user.meses"
                             />
                             </div>
-                            
+
                             <div class="col-12 mt-3">
                                 <button v-if="status" type="button" class="btn btn-success px-4 mx-2" @click="addCliente">Crear Usuario</button>
                                 <button v-else type="button" class="btn btn-warning px-4 mx-2" @click="actualizarCliente">Actualizar Usuario</button>
@@ -109,7 +109,7 @@
                         <div>
                             <ul>
                                 <li v-for="cliente in clientes" :key="cliente.value" >
-                                    <div v-if="cliente.firstname != 'Admin'" class="users">                                        
+                                    <div v-if="cliente.firstname != 'Admin'" class="users">
                                         <span>{{cliente.firstname}} {{cliente.lastname}} {{cliente.secondlastname}}</span>
                                         <div>
                                             <button class="btn btn-primary btn-sm mx-2" @click="editCliente(cliente)">Editar</button>
@@ -199,6 +199,11 @@ import LeftMenu from '@/components/LeftMenu.vue'
         },
         mounted(){
             this.getClientes()
+        },
+        created(){
+            if(localStorage.clientType == undefined){
+                this.$router.push("/login")
+            }
         }
     }
 </script>
@@ -220,7 +225,7 @@ import LeftMenu from '@/components/LeftMenu.vue'
         display: flex;
         justify-content: space-between;
         text-align: left;
-        margin-bottom: 5px; 
+        margin-bottom: 5px;
     }
-    
+ 
 </style>
