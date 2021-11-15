@@ -22,9 +22,3 @@ Tener instalado NodeJS
 ```
 npm run serve
 ```
-
-### En el server ejecutar lo siguiente
-
-```
-node index.js
-```
