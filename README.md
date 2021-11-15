@@ -11,17 +11,10 @@ link
 ```Backend: NodeJS, MongoDB y Express```
 
 
-### Instrucciones para crear el usuario administrador
+### Requerimientos
 
 ```
-Se debe crear a travez de POSTMAN con la ruta de:
-http://localhost:3000/cliente-registro
-{
-    "username" : "admin",
-    "password" : "admin",
-    "firstname" : "admin",
-    "clientType" : true
-}
+Tener instalado NodeJS
 ```
 
 ### En el cliente ejecutar lo siguiente
