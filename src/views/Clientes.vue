@@ -143,7 +143,7 @@ import LeftMenu from '@/components/LeftMenu.vue'
                     edad: "",
                     membresia: "",
                     meses: "",
-                    clientType: true
+                    clientType: false;
                 },
                 clientes: [],
                 status: true
@@ -227,5 +227,5 @@ import LeftMenu from '@/components/LeftMenu.vue'
         text-align: left;
         margin-bottom: 5px;
     }
- 
+
 </style>
