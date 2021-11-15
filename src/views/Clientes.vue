@@ -143,7 +143,7 @@ import LeftMenu from '@/components/LeftMenu.vue'
                     edad: "",
                     membresia: "",
                     meses: "",
-                    clientType: false;
+                    clientType: false
                 },
                 clientes: [],
                 status: true
