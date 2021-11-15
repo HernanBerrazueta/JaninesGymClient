@@ -2,7 +2,7 @@
 
 ## Link para ver el video en loom
 ```
-link
+https://www.loom.com/share/6393e289e3d24a38acbdbc9ec9d7bb4b
 ```
 
 ## Frontend y Backend
