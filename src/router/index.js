@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Home2 from '../views/Home2.vue'
 import Login from '../views/Login.vue'
 import Perfil from '../views/Perfil.vue'
 import Clientes from '../views/Clientes.vue'
@@ -8,6 +9,12 @@ import PlanAlimenticio from '../views/clientes/Plan Alimenticio.vue'
 const routes = [
   {
     path: '/',
+    name: 'Home2',
+    component: Home2,
+    redirect: '/login'
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home,
     // redirect: '/login'

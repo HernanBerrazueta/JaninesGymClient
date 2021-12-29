@@ -1,24 +1,24 @@
-# client
+# Janine's Gym Core
 
-## Project setup
+## Link para ver el video en loom
 ```
-npm install
+https://www.loom.com/share/6393e289e3d24a38acbdbc9ec9d7bb4b
 ```
 
-### Compiles and hot-reloads for development
+## Frontend y Backend
+
+```Frontend: VueJS y Bootstrap```
+```Backend: NodeJS, MongoDB y Express```
+
+
+### Requerimientos
+
+```
+Tener instalado NodeJS
+```
+
+### En el cliente ejecutar lo siguiente
+
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

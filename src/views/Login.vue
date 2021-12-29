@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
         <div class="login col-3 mx-auto p-4">
-            <h1 class="mb-4">JANINE'S GYM</h1>            
+            <h1 class="mb-4">JANINE'S GYM</h1>
             <form>
                 <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
@@ -52,12 +52,12 @@ export default {
                         } else {
                             console.log("no")
                             localStorage.clientType = false
-                            this.$router.push("/")
+                            this.$router.push("/home")
                         }
                     } else {
                         alert("Algun Campo Esta Incorrecto")
                     }
-                })    
+                })
             } else {
                 alert("Hay Campos Vacios")
             }

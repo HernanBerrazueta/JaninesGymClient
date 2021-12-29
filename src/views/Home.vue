@@ -103,5 +103,5 @@ import LeftMenu from '@/components/LeftMenu.vue'
         border-bottom: 1px solid #aaa;
         font-weight: bold;
     }
-    
+
 </style>
