@@ -46,8 +46,11 @@ export default {
                     if(this.user == res.data.username && this.password == res.data.password){
                         if(res.data.clientType){
                             localStorage.clientType = true
+                                                console.log("si")
+
                             this.$router.push("/clientes")
                         } else {
+                            console.log("no")
                             localStorage.clientType = false
                             this.$router.push("/")
                         }
@@ -58,6 +61,13 @@ export default {
             } else {
                 alert("Hay Campos Vacios")
             }
+        }
+    },
+    created(){
+        if(localStorage.clientType == "true"){
+            this.$router.push("/clientes")
+        } else if (localStorage.clientType == "false") {
+            this.$router.push("/")
         }
     }
 };

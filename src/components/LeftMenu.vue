@@ -5,16 +5,15 @@
                 <img src="@/assets/logo.png" alt="">
             </h3>
         </header>
-        <ul>
-            <li v-if="menuType == true" @click="this.$router.push('/clientes')">Clientes</li>
-            <div v-else>                
-                <li @click="this.$router.push('/')">Inicio</li>
-                <li @click="this.$router.push('/perfil')">Perfil</li>
-                <li>Entrenamiento</li>
-                <li>Plan Alimenticio</li>
-                <li>Configuración </li>
-            </div>
-            <li @click="this.$router.push('/login')">Salir</li>
+        <ul v-if="menu == 'true'">
+            <li @click="this.$router.push('/clientes')">Clientes</li>
+            <li @click="logOut()">Salir</li>
+        </ul>
+        <ul v-else>
+            <li v-bind:class="[active == '/' ? 'active' : '']" @click="this.$router.push('/')">Inicio</li>
+            <li v-bind:class="[active == '/perfil' ? 'active' : '']" @click="this.$router.push('/perfil')">Perfil</li>
+            <li  v-bind:class="[active == '/plan-alimenticio' ? 'active' : '']" @click="this.$router.push('/plan-alimenticio')">Plan Alimenticio</li>   
+            <li @click="logOut()">Salir</li>
         </ul>
     </nav>
 </template>
@@ -23,11 +22,24 @@
     export default {
         data(){
             return{
-                menuType: Boolean
+                menu: false,
+                active: "/"
+            }
+        },
+        watch: {
+            menu: function (val){
+                this.menu = val
+            }
+        },
+        methods:{
+            logOut(){
+                localStorage.clear();
+                this.$router.push('/login')
             }
         },
         created(){
-            this.menuType = localStorage.clientType
+            this.menu = localStorage.clientType
+            this.active = this.$route.path
         }
     }
 </script>
@@ -39,8 +51,8 @@
         height: 100vh;
         background-color: #333333;
         color: #FFF;
-        box-shadow: 4px 4px 10px #333;
-        border-top-right-radius: 40px;
+        /* box-shadow: 4px 4px 10px #333; */
+        /* border-top-right-radius: 40px; */
         overflow: hidden;
     }
 
@@ -64,5 +76,10 @@
 
     li:hover, h3{
         background: #c64583;
+        color : #FFF;
+    }
+
+    .active{
+        color: #c64583;
     }
 </style>

@@ -67,6 +67,11 @@ import LeftMenu from '@/components/LeftMenu.vue'
         name: 'Home',
         components: {
             LeftMenu
+        },
+        created(){
+            if(localStorage.clientType == undefined){
+                this.$router.push("/login")
+            }
         }
     }
 </script>
@@ -77,9 +82,7 @@ import LeftMenu from '@/components/LeftMenu.vue'
         background-image: url("~@/assets/gym1.jpg");
         background-size: cover;
     }
-    section{
-        width: calc(100% - 285px);
-    }
+
 
     h3{
         text-transform: uppercase;

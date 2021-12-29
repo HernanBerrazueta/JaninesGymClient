@@ -145,7 +145,7 @@ import LeftMenu from '@/components/LeftMenu.vue'
                     meses: "",
                     clientType: true
                 },
-                clientes: [],
+                clientes: [],   
                 status: true
             }
         },
