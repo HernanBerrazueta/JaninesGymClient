@@ -11,9 +11,9 @@
             <li @click="logOut()">Salir</li>
         </ul>
         <ul v-else>
-            <!-- <li v-bind:class="[active == '/' ? 'active' : '']" @click="this.$router.push('/')">Inicio</li>
+            <!-- <li v-bind:class="[acti    ve == '/' ? 'active' : '']" @click="this.$router.push('/')">Inicio</li>
             <li v-bind:class="[active == '/perfil' ? 'active' : '']" @click="this.$router.push('/perfil')">Perfil</li> -->
-            <li  v-bind:class="[active == '/plan-alimenticio' ? 'active' : '']" @click="this.$router.push('/plan-alimenticio')">Plan Alimenticio</li>   
+            <li  v-bind:class="[active == '/plan-alimenticio' ? 'active' : '']" @click="this.$router.push('/plan-alimenticio')">Plan Alimenticio</li>
             <li @click="logOut()">Salir</li>
         </ul>
     </nav>
