@@ -6,13 +6,13 @@
             </h3>
         </header>
         <ul v-if="menu == 'true'">
-            <li @click="this.$router.push('/clientes')">Clientes</li>
-            <li @click="this.$router.push('/dietas')">Dietas</li>
+            <!-- <li @click="this.$router.push('/clientes')">Clientes</li>
+            <li @click="this.$router.push('/dietas')">Dietas</li> -->
             <li @click="logOut()">Salir</li>
         </ul>
         <ul v-else>
-            <li v-bind:class="[active == '/' ? 'active' : '']" @click="this.$router.push('/')">Inicio</li>
-            <li v-bind:class="[active == '/perfil' ? 'active' : '']" @click="this.$router.push('/perfil')">Perfil</li>
+            <!-- <li v-bind:class="[active == '/' ? 'active' : '']" @click="this.$router.push('/')">Inicio</li>
+            <li v-bind:class="[active == '/perfil' ? 'active' : '']" @click="this.$router.push('/perfil')">Perfil</li> -->
             <li  v-bind:class="[active == '/plan-alimenticio' ? 'active' : '']" @click="this.$router.push('/plan-alimenticio')">Plan Alimenticio</li>   
             <li @click="logOut()">Salir</li>
         </ul>

@@ -2,7 +2,7 @@
     <div class="d-flex">
         <LeftMenu />
         <section>
-            
+
         </section>
     </div>
 </template>

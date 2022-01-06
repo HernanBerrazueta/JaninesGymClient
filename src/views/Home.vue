@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="row px-4">
                     <div class="col-12 my-5">
-                        <h3>Bienvenid@ usuario, es bueno verte de nuevo.</h3>
+                        <h3>Bienvenido/a, es bueno verte de nuevo!</h3>
                     </div>
                     <div class="col-3">
                         <div class="card">
