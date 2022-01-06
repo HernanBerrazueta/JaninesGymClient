@@ -4,6 +4,7 @@ import Home2 from '../views/Home2.vue'
 import Login from '../views/Login.vue'
 import Perfil from '../views/Perfil.vue'
 import Clientes from '../views/Clientes.vue'
+import Dietas from '../views/Dietas.vue'
 import PlanAlimenticio from '../views/clientes/Plan Alimenticio.vue'
 
 const routes = [
@@ -33,6 +34,11 @@ const routes = [
     path: '/clientes',
     name: 'Clientes',
     component: Clientes
+  },
+  {
+    path: '/dietas',
+    name: 'Dietas',
+    component: Dietas
   },
   {
     path: '/plan-alimenticio',

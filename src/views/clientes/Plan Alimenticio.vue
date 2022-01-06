@@ -44,6 +44,7 @@
               SIGUIENTE
             </button>
           </div>
+          
           <div v-if="steps == 2" class="col-12 p-4 alimentos">
             <h3>
               <b
@@ -141,7 +142,7 @@
               <div class="col-12">
                 <h4>Comida</h4>
               </div>
-              <div class="col-3">
+              <div v-if="comida == 0" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -149,6 +150,7 @@
                     name="des4"
                     value="carnes"
                     v-model="respuestas.q4"
+                    @change="comida++"
                   />
                   <label class="form-check-label">
                     Carnes
@@ -161,19 +163,20 @@
                     name="des4"
                     value="papas"
                     v-model="respuestas.q4"
+                    @change="comida++"
                   />
                   <label class="form-check-label">
                     Papas
                   </label>
                 </div>
               </div>
-              <div v-if="respuestas.q4 == 'carnes'" class="col-3">
+              <div v-if="respuestas.q4 == 'carnes' && comida == 1" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
                     name="des5"
-                    @change="respuestas.q5++"
+                    @change="respuestas.q5++, comida++"
                   />
                   <label class="form-check-label">
                     Carne Molida
@@ -184,20 +187,20 @@
                     class="form-check-input"
                     type="radio"
                     name="des5"
-                    @change="respuestas.q5--"
+                    @change="respuestas.q5--, comida++"
                   />
                   <label class="form-check-label">
                     Pollo
                   </label>
                 </div>
               </div>
-              <div v-if="respuestas.q4 == 'papas'" class="col-3">
+              <div v-if="respuestas.q4 == 'papas' && comida == 1" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
                     name="des6"
-                    @change="respuestas.q5++"
+                    @change="respuestas.q5++, comida++"
                   />
                   <label class="form-check-label">
                     Lechuga
@@ -208,20 +211,20 @@
                     class="form-check-input"
                     type="radio"
                     name="des6"
-                    @change="respuestas.q5 = respuestas.q5 - 2"
+                    @change="respuestas.q5 = respuestas.q5 - 2, comida++"
                   />
                   <label class="form-check-label">
                     Frijoles
                   </label>
                 </div>
               </div>
-              <div class="col-3">
+              <div v-if="comida == 2" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
                     name="des7"
-                    @change="respuestas.q5++"
+                    @change="respuestas.q5++, comida++"
                   />
                   <label class="form-check-label">
                     Queso
@@ -232,7 +235,7 @@
                     class="form-check-input"
                     type="radio"
                     name="des7"
-                    @change="respuestas.q5--"
+                    @change="respuestas.q5--, comida++"
                   />
                   <label class="form-check-label">
                     Aguacate
@@ -246,13 +249,13 @@
               <div class="col-12">
                 <h4>Cena</h4>
               </div>
-              <div v-if="respuestas.q4 == 'carnes'" class="col-3">
+              <div v-if="respuestas.q4 == 'carnes' && cena == 0" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
                     name="des8"
-                    @change="respuestas.q7++"
+                    @change="respuestas.q7++, cena++"
                   />
                   <label class="form-check-label">
                     Atún
@@ -263,20 +266,20 @@
                     class="form-check-input"
                     type="radio"
                     name="des8"
-                    @change="respuestas.q7--"
+                    @change="respuestas.q7--, cena++"
                   />
                   <label class="form-check-label">
                     Pescado
                   </label>
                 </div>
               </div>
-              <div v-if="respuestas.q4 == 'carnes'" class="col-3">
+              <div v-if="respuestas.q4 == 'carnes' && cena == 1" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
                     name="des9"
-                    @change="respuestas.q7++"
+                    @change="respuestas.q7++, cena++"
                   />
                   <label class="form-check-label">
                     Plátano
@@ -287,20 +290,20 @@
                     class="form-check-input"
                     type="radio"
                     name="des9"
-                    @change="respuestas.q7--"
+                    @change="respuestas.q7--, cena++"
                   />
                   <label class="form-check-label">
                     Fresas
                   </label>
                 </div>
               </div>
-              <div v-if="respuestas.q4 == 'papas'" class="col-3">
+              <div v-if="respuestas.q4 == 'papas' && cena == 0" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
                     name="des10"
-                    @change="respuestas.q7++"
+                    @change="respuestas.q7++, cena++"
                   />
                   <label class="form-check-label">
                     Tomate Cherry
@@ -311,20 +314,20 @@
                     class="form-check-input"
                     type="radio"
                     name="des10"
-                    @change="respuestas.q7--"
+                    @change="respuestas.q7--, cena++"
                   />
                   <label class="form-check-label">
                     Almendras
                   </label>
                 </div>
               </div>
-              <div v-if="respuestas.q4 == 'papas'" class="col-3">
+              <div v-if="respuestas.q4 == 'papas' && cena == 1" class="col-3">
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
                     name="des11"
-                    @change="respuestas.q7 = respuestas.q7 +2"
+                    @change="respuestas.q7 = respuestas.q7 +2, cena++"
                   />
                   <label class="form-check-label">
                     Manzana
@@ -335,7 +338,7 @@
                     class="form-check-input"
                     type="radio"
                     name="des11"
-                    @change="respuestas.q7= respuestas.q7 - 2"
+                    @change="respuestas.q7= respuestas.q7 - 2, cena++"
                   />
                   <label class="form-check-label">
                     Fresas
@@ -344,7 +347,7 @@
               </div>
             </div>
 
-            <div v-if="respuestas.q7 != 0" class="row">
+            <div class="row">
               <div class="col-12">
                 <button @click="steps=3" class="btn btn-primary">Resultados</button>
               </div>
@@ -352,7 +355,7 @@
           </div>
 
           <!--  Resultados  -->
-          <div class="col-12 p-4">
+          <div v-if="steps == 3" class="col-12 p-4">
             <h3>
               <b
                 >Resultados de Dieta</b
@@ -397,8 +400,74 @@
               <div class="col-12">
                 <h5><b>Almuerzo</b></h5>
               </div>
+              <div v-if="respuestas.q4 == 'carnes' && respuestas.q5 <= 0" class="col-12">
+                <ul>
+                  <li>200 gr de pechuga de pollo picada</li>
+                  <li>1 tomate cortado en cubitos</li>
+                  <li>1/2 taza de 1 cucharada de crema agria</li>
+                  <li>1/2 aguacate cortado en cubitos</li>
+                </ul>
+              </div>
+              <div v-if="respuestas.q4 == 'carnes' && respuestas.q5 > 0" class="col-12">
+                <ul>
+                  <li>200 gr de carne molida</li>
+                  <li>1/2 taza de queso rallado</li>
+                  <li>1 cucharada de mayonesa</li>
+                  <li>1 tomate en rodajas</li>
+                </ul>
+              </div>
+              <div v-if="respuestas.q4 == 'papas' && respuestas.q5 > 0" class="col-12">
+                <ul>
+                  <li>2 rebanadas de pan integral</li>
+                  <li>1/2 taza de queso rallado</li>
+                  <li>1 tomate en rodajas</li>
+                  <li>1/4 de taza de lechuga picada</li>
+                </ul>
+              </div>
+              <div v-if="respuestas.q4 == 'papas' && respuestas.q5 <= 0" class="col-12">
+                <ul>
+                  <li>2 tortillas integrales</li>
+                  <li>3/4 taza de frijoles refritos</li>
+                  <li>1/2 taza de arroz cocido</li>
+                  <li>1/2 aguacate</li>
+                </ul>
+              </div>
               <div class="col-12">
                 <h5><b>Cena</b></h5>
+              </div>
+              <div v-if="respuestas.q4 == 'carnes' && respuestas.q7 <= 0" class="col-12">
+                <ul>
+                  <li>300 gr de filete de atun</li>
+                  <li>1 taza de vegetales salteados</li>
+                  <li>1 platano grande</li>
+                </ul>
+              </div>
+              <div v-if="respuestas.q4 == 'carnes' && respuestas.q7 > 0" class="col-12">
+                <ul>
+                  <li>4 huevos grandes</li>
+                  <li>1/4 taza de avena</li>
+                  <li>1/2 taza de fresas</li>
+                  <li>250 gr de pescado a la plancha</li>
+                </ul>
+              </div>
+              <div v-if="respuestas.q4 == 'papas' && respuestas.q7 > 0" class="col-12">
+                <ul>
+                  <li>1 taza de yogurt griego</li>
+                  <li>1 manzana grande</li>
+                  <li>100 gr de almendras enteras</li>
+                  <li>2 1/2 rebanadas de pan</li>
+                </ul>
+              </div>
+              <div v-if="respuestas.q4 == 'papas' && respuestas.q7 <= 0" class="col-12">
+                <ul>
+                  <li>2 tazas de pasta integral</li>
+                  <li>5 tomates cherry</li>
+                  <li>1/4 taza de avena</li>
+                  <li>1/2 taza de fresas</li>
+                </ul>
+              </div>
+              <div v-if="existe" class="col-12">
+                <button class="btn btn-primary" @click="saveResult">GUARDAR</button>
               </div>
             </div>
           </div>
@@ -409,14 +478,19 @@
 </template>
 
 <script>
+import axios from 'axios'
 import LeftMenu from "@/components/LeftMenu.vue";
 export default {
   name: "Plan Alimenticio",
   data() {
     return {
-      steps: 2,
+      steps: 0,
       desayuno: 0,
+      comida: 0,
+      cena: 0,
+      existe : true,
       respuestas: {
+        user: '',
         q3: 0,
         q5: 0,
         q7: 0
@@ -434,7 +508,28 @@ export default {
         alert("SELECCIONE UNA OPCIÓN PARA CONTINUAR");
       }
     },
+    saveResult(){
+      axios.post("http://localhost:3000/dieta-registro",this.respuestas).then(res => {
+        alert("Dieta Guardada")
+      })
+    },
+    cargarDieta(){
+      axios.post("http://localhost:3000/dieta-user", this.respuestas).then(res => {
+        console.log("test",res.data)
+        if(res.data.q1){
+          this.respuestas = res.data
+          this.steps = 3
+          this.existe = false;
+        }
+      })
+    }
   },
+  created(){  
+    this.respuestas.user = localStorage.username
+  },
+  mounted(){
+    this.cargarDieta()
+  }
 };
 </script>
 

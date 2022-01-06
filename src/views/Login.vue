@@ -46,12 +46,11 @@ export default {
                     if(this.user == res.data.username && this.password == res.data.password){
                         if(res.data.clientType){
                             localStorage.clientType = true
-                                                console.log("si")
-
+                            localStorage.username = this.user
                             this.$router.push("/clientes")
                         } else {
-                            console.log("no")
                             localStorage.clientType = false
+                            localStorage.username = this.user
                             this.$router.push("/home")
                         }
                     } else {
