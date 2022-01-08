@@ -1,8 +1,8 @@
 # Janine's Gym Core
 
-## Link para ver el video en loom
+## Link para en Heroku
 ```
-https://www.loom.com/share/6393e289e3d24a38acbdbc9ec9d7bb4b
+https://janines-gym.herokuapp.com/login
 ```
 
 ## Frontend y Backend
