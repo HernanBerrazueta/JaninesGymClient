@@ -7,6 +7,24 @@
                     <div class="col-12">
                         <h1>Dietas</h1>
                     </div>
+                    <div class="col-6">
+                        <select class="form-select" v-model="dieta">
+                            <option value="Ganar Masa">Ganar Masa</option>
+                            <option value="Bajar Peso">Bajar Peso</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <input type="date" v-model="fecha">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary mt-5 mb-5" @click="getDietas">BUSCAR</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Resultados</h2>
+                        {{dietas}}
+                    </div>
                 </div>
             </div>
         </section>
@@ -19,7 +37,9 @@ import LeftMenu from '@/components/LeftMenu.vue'
     export default {
         data(){
             return{
-                dietas: []
+                dietas: '',
+                dieta: 'dieta',
+                fecha: 'fecha'
             }
         },
         name: 'Dietas',
@@ -28,17 +48,23 @@ import LeftMenu from '@/components/LeftMenu.vue'
         },
         methods: {
             getDietas(){
-                axios.post("http://localhost:3000/cliente-registro", this.user).then(res => {
-                    alert("Cliente Agregado")
+
+                let f = this.fecha.split('-')
+                
+                let buscar = {
+                    fecha: f[1].replace(/^0+/, '') +'/'+ f[2].replace(/^0+/, '') +'/'+ f[0].replace(/^0+/, ''),
+                    dieta: this.dieta
+                }
+
+                axios.post("http://localhost:3000/find-dieta", buscar).then(res => {
+
+                    if(res.data.length > 0){
+                        this.dietas = res.data
+                    } else {
+                        this.dietas = "No se encontraron resultados"
+                    }
+
                 })
-            }
-        },
-        mounted(){
-            this.getClientes()
-        },
-        created(){
-            if(localStorage.clientType == undefined){
-                this.$router.push("/login")
             }
         }
     }

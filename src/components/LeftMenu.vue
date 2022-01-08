@@ -6,8 +6,8 @@
             </h3>
         </header>
         <ul v-if="menu == 'true'">
-            <!-- <li @click="this.$router.push('/clientes')">Clientes</li>
-            <li @click="this.$router.push('/dietas')">Dietas</li> -->
+            <li @click="this.$router.push('/clientes')">Clientes</li>
+            <li @click="this.$router.push('/dietas')">Dietas</li>
             <li @click="logOut()">Salir</li>
         </ul>
         <ul v-else>
