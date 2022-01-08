@@ -1,6 +1,6 @@
 # Janine's Gym Core
 
-## Link para en Heroku
+## Link en Heroku
 ```
 https://janines-gym.herokuapp.com/login
 ```
